@@ -1,0 +1,430 @@
+@charset "UTF-8";
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	width: 90%;
+	margin: 0 auto;
+	padding: 50px 30px;
+}
+
+section {
+	margin: 80px 0;
+}
+
+h1 {
+	text-align: center;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+}
+
+.box {
+	width: 200px;
+	height: 150px;
+	border-radius: 15px;
+	text-align: center;
+	background-color: lightblue;
+}
+
+.box > span {
+	display: block;
+	line-height: 150px;
+	color: #fff;
+	letter-spacing: 2px;
+}
+
+.fadeIn {
+	animation-name: fadeInAnime;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	opacity: 0;
+}
+@keyframes fadeInAnime {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fadeLeft {
+	animation-name: fadeInLeft;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	opacity: 0;
+}
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.fadeRight {
+	animation-name: fadeInRight;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	opacicty: 0;
+}
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.fadeDown {
+	animation-name: fadeInDown;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	opacity: 0;
+}
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeUp {
+	animation-name: fadeInUp;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	opacity: 0;
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+ul {
+	width: 500px;
+	height: 200px;
+	overflow: auto;
+	list-style-type: none;
+	padding: 0 15px 0;
+	border: 1px solid #777;
+	border-radius: 10px;
+}
+
+.sticky {
+	position: sticky;
+	top: 0px;
+	margin-top: 0;
+	border-bottom: 1px solid #999;
+	background-color: #fff;
+	line-height: 100px;
+}
+
+li {
+	padding-left: 10px;
+	font-size: 16px;
+	line-height: 50px;
+	border-bottom: 1px solid #777;
+}
+
+.fadeIn {
+	animation-name: fadeInAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	opaity: 0;
+}
+
+@keyframes fadeInAnime {
+	from {
+		opacity: 0;
+		
+	}
+	to {
+		opacity: 1;
+		
+	}
+}
+
+.line {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+.line::before,
+.line::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 3px;
+	background-color: #555;
+}
+.line::before {
+	top: 0;
+	left: 0;
+	animation-name: borderStretchAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+.line::after {
+	bottom: 0;
+	right: 0;
+	animation-name: borderStretchAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes  borderStretchAnime {
+	0 { width 0; }
+	100% {width: 100%; }
+}
+
+.line2::before,
+.line2::after {
+	content: "";
+	position: absolute;
+	width: 3px;
+	height: 0;
+	background-color: #888;
+	animation-name: borderStretchAnime2;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.line2::before {
+	bottom: 0;
+	left: 0;
+}
+.line2::after {
+	top: 0;
+	right: 0;
+}
+
+@keyframes borderStretchAnime2 {
+	from {
+		height: 0;
+	}
+	to {
+		height: 100%;
+	}
+}
+
+.text-appear {
+	line-height: 300px;
+	text-align: center;	
+}
+
+.wrapper2 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 80px 50px;
+	
+}
+.scroll {
+	flex-basis: 200px;
+	height: 300px;
+	margin: 0 50px 80PX;
+	border: 1px solid #000; 
+}
+
+.fadeFromLeft {
+	animation-name: fadeFromLeftAnime;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	opacity: 0;
+}
+.fadeFromLeft1 {
+	animation-delay: 0.5s;
+}
+.fadeFromLeft2 {
+	animation-delay: 1s;
+}
+
+@keyframes fadeFromLeftAnime {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.assign-event {
+	width: 300px;
+	height:	100px;
+	border: 1px solid #2710d5;
+	border-radius: 10px;
+	box-shadow: 0 0 30px -2px rgba(0,0,255,0.5), inset 0 0 10px -2px rgba(0,0,255,0.5);
+	text-align: center;
+}
+.assigning {
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	
+}
+.assigning > p {
+	display: inline-block;
+}
+.assigned {
+	display: block;
+	margin-left: 15px;
+}
+.translateX {
+	animation-name: translateAnime;
+	animation-duration: 1s;
+	animation-iteration-count: 2;
+}
+@keyframes translateAnime {
+	from {
+		margin-left: 10px;
+	}
+	to {
+		margin-left: 20px;
+	}
+}
+
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3,minmax(100px, 3fr));
+	grid-auto-rows: minmax(min-content, auto);
+	gap: 10px;
+}
+
+.bgextend {
+	position: relative;
+	padding: 20px;
+	border: 1px solid #000;
+	opacity: 0;
+	animation-name: bgextendAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+@keyframes bgextendAnime {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity : 1;
+	}
+}
+
+.textAppear {
+	text-align: center;
+	opacity: 0;
+	animation-name: textAppearAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+}
+@keyframes textAppearAnime {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+	
+.bgLRextend::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: -20px;
+	background-color: #777;
+	animation-name: bgLRextendAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+@keyframes bgLRextendAnime {
+	0% {
+		transform-origin: left;
+		transform: scaleX(0);
+	}
+	50% {
+		transform-origin: left;
+		transform: scaleX(1);
+	}
+	50.001% {
+		transform-origin: right;
+	}
+	100% {
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+}
+
+.bgRLextnd::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #777;
+	animation-name: bgRLextendAnime;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+@keyframes bgRLextendAnime {
+	0% {
+		transform-origin: right;
+		transform: scaleX(0);
+	}
+	50% {
+		transform-origin: right;
+		transform: scaleX(1);
+	}
+	50.001% {
+		transform-origin: left;
+	}
+	100% {
+		transform-oriogin: left;
+		transform: scaleX(0);
+	}
+}
+
+.delayScroll {
+	display: grid;
+	
+}
+
+
+
+
+
+
+
+

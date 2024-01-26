@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>Grid Layout</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<header class="header">
+			<div class="grid header-wrapper">
+				<h1>Grid Layout</h1>
+				<nav>
+					<ul>
+						<li><a href="index.html#sec1">Sec1</a></li>
+						<li><a href="index.html#sec2">Sec2</a></li>
+						<li><a href="index.html#sec3">Sec3</a></li>
+						<li><a href="index.html#sec4">Sec4</a></li>
+						<li><a href="index.html#sec5">Sec5</a></li>
+						<li><a href="index.html#sec6">Sec6</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main class="main">
+			<section id="sec1" class="sec1">
+					<h2>Basic Usage of Grid</h2>
+				<div class="grid grid-wrapper1">
+					<p class="item1">ITEM1</p>
+					<p class="item2">ITEM2</p>
+					<p class="item3">ITEM3</p>
+					<p class="item4">ITEM4</p>
+					<p class="item5">ITEM5</p>
+				</div>
+			</section>
+
+			<section id="sec2" class="sec2">
+				<h2>grid-template-areasを使用する</h2>
+				<div class=" grid grid-wrapper2">
+					<p class="item1">ITEM1 Header</p>
+					<p class="item2">ITEM2 Navigation</p>
+					<p class="item3">ITEM3 Main</p>
+					<p class="item4">ITEM4 Side</p>
+					<p class="item5">ITEM5 Footer</p>
+				</div>
+			</section>
+
+			<section id="sec3" class="sec3">
+				<h2>grid-template-areasを使ってcardを作成</h2>
+				<div class="grid grid-wrapper3">
+					<div class="dummy_img"></div>
+					<div class="content">
+						<h2>TITLE</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="sec4" class="sec4">
+				<h2>ブロック軸、インライン軸上の配置位置</h2>
+				<div class="grid grid-wrapper4">
+					<p class="item1">ITEM1</p>
+					<p class="item2">ITEM2</p>
+					<p class="item3">ITEM3</p>
+					<p class="item4">ITEM4</p>
+					<p class="item5">ITEM5</p>
+					<p class="item6">ITEM6</p>
+					<p class="item7">ITEM7</p>
+					<p class="item8">ITEM8</p>
+					<p class="item9">ITEM9</p>
+				</div>
+			</section>
+
+			<section id="sec5" class="sec5">
+				<h2>align-items, justify-items で中央揃え</h2>
+				<div class="grid grid-wrapper5">
+					<p class="item1">ITEM1</p>
+				</div>
+			</section>
+
+			<section id="sec6" class="sec6">
+				<h2>ブロック軸上でのグリッドトラックの配置</h2>
+				<div class="grid grid-wrapper6">
+					<p class="item1">ITEM1</p>
+					<p class="item2">ITEM2</p>
+					<p class="item3">ITEM3</p>
+					<p class="item4">ITEM4</p>
+				</div>
+				<div class="grid grid-wrapper7">
+					<p class="item1">ITEM1</p>
+					<p class="item2">ITEM2</p>
+					<p class="item3">ITEM3</p>
+					<p class="item4">ITEM4</p>
+				</div>
+			</section>
+
+			<section id="sec7" class="sec7">
+				<div class="clearfix">
+				<h2>インライン軸上のグリッドトラックの配置</h2>
+				<div class="grid grid-wrapper8">
+					<p class="item1">ITEM1</p>
+					<p class="item2">ITEM2</p>
+					<p class="item3">ITEM3</p>
+					<p class="item4">ITEM4</p>
+				</div>
+				
+				
+				<div class="grid grid-wrapper9">
+					<p class="item1">place-content</p>
+					<p class="item2">place-content</p>
+					<p class="item3">place-content</p>
+					<p class="item4">place-content</p>
+				</div>
+				</div>
+			</section>
+
+
+
+		</main>
+
+		<footer>
+		</footer>
+	</body>
+</html>

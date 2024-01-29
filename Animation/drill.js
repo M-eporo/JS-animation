@@ -30,3 +30,31 @@ function delayScroll(){
     }
   });
 }
+
+function moveAnimation() {
+  // on loading : 
+  const randomElm = $(".randomBox");
+  const randomElmChild = $(".randomBox").children();
+  if(!$(randomElm).hasClass("play")) {
+    randomAnime();
+  }
+
+  function randomAnime() {
+    $(randomElm).addClass("play");
+    let rnd = Math.floor(Math.random() * $(randomElmChild).length);
+    let moveData = "fadeUp";
+    $(randomElmChild[rnd]).addClass(moveData);
+    randomElmChild.splice(rnd,1);
+
+    if(radomElmChild.length === 0){
+      $(rndElm).removeClass("play");
+    } else {
+      setTimeout(( ) => randomAnime(), 500);
+    }
+  }
+
+  // on scroll : 
+  
+
+  
+}

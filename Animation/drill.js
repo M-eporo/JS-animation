@@ -31,6 +31,7 @@ function delayScroll(){
   });
 }
 
+// ランダムに要素が出現 
 function moveAnimation() {
   // on loading : 
   const randomElm = $(".randomBox");
@@ -54,7 +55,33 @@ function moveAnimation() {
   }
 
   // on scroll : 
-  
+  let randomElm2 = $(".randomScroll");
+  let randomElmChild2 = $(randomElm2).children();
+  randomScrollAnime();
 
-  
+  function randomScrollAnime() {
+    let elemPos = $(".randomScroll").offset().top;
+    let height = $(window).height();
+    let scroll = $(window).scrollTop();
+
+    if(scroll >= elemPos - height){
+      if(randomElmChild2.length > 0){
+        let rnd = Math.floor(Math.random() * randomElmChild2.length);
+        let moveData = "fadeUp";
+
+        if(animeFlag){
+          animeFlag = false;
+          $(randomElmChild2).addClass(moveData);
+          setTimeout(() => {
+            animeFlag = true;
+            randomScrollAnime();
+          },500);
+          randomElmChild2.splice(rnd, 1);
+        } 
+      }
+    } else {
+      animeFlag = true;
+    }
+  }
 }
+let animeFlag = true;

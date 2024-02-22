@@ -1,0 +1,29 @@
+@charset "UTF-8";
+body {
+	margin: 0;
+	background-color: #fff;
+	font-family: "Pacifico", cursive, Meiryo, sans-serif;
+	font-size: 16px;
+}
+
+#out-container {
+	display: flex;
+	place-items: center;
+	height: 100vh;
+}
+#container {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #fff;
+	text-align: center;
+	
+}
+
+
+
+#container::after {
+	
+}

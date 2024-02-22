@@ -18,6 +18,7 @@ body {
 	background-color: #d7d9d4;
 	border-radius: 50%;
 	position: absolute;
+	filter: blur(2px);
 	animation: animate-snow 10s linear;
 }
 @keyframes animate-snow {

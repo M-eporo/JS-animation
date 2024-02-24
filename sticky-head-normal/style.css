@@ -1,0 +1,34 @@
+@charset "UTF-8";
+body{
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+p {
+  color: yellow;
+}
+.page-header {
+  background-color: rgb(255,255,255);
+  position: absolute;
+  width: 100%;
+  min-width: 960px;
+  box-shadow: 0 3px 6px -4px rgba(0,0,0,0.5);
+}
+
+.page-header.sticky {
+  position:  sticky;
+  top: 0;
+}
+
+.page-header > .inner {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 960px;
+}
+
+.main {
+  background-color: #000;
+}

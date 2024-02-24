@@ -15,10 +15,17 @@ p {
 p:first-child {
   margin-top: 0;
 }
+
 a {
   display: block;
   color: #000;
   text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .primary-nav > ul {
@@ -31,6 +38,7 @@ a {
 .primary-nav li {
   margin: 20px;
 }
+
 /* 初期状態のヘッダー */
 .page-header {
   background-color: rgb(255,255,255);

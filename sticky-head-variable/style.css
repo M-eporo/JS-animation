@@ -1,0 +1,80 @@
+@charset "UTF-8";
+body{
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: yellow;
+}
+p:first-child {
+  margin-top: 0;
+}
+a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+.primary-nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.primary-nav li {
+  margin: 20px;
+}
+/* 初期状態のヘッダー */
+.page-header {
+  background-color: rgb(255,255,255);
+  width: 100%;
+  height: 112px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.no-boxshadow .page-header {
+  border-bottom: 1px solid rgb(204,204,204);
+}
+
+.page-header > .inner {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 960px;
+}
+
+/* スティッキーヘッダー用 */
+
+.page-header-clone {
+  background-color: lightblue;
+  position: fixed;
+  top: -112px;
+  width: 100%;
+  z-index: 30;
+  box-shadow: 0 1px 1px -1px rgba(0,0,0,0.25);
+  transition: top 0.25s;
+}
+
+.page-header-clone > .inner {
+  margin: auto;
+  width: 960px;
+}
+
+.page-header-clone.visible {
+  top: 0;
+}
+
+.page-header-clone:hover {
+  opacity: 1; 
+}
+
+.main {
+  background-color: #000;
+}

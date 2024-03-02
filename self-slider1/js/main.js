@@ -46,12 +46,14 @@ $(function() {
     return false;
 
   });
-
+//ここからスライダー
   $('.slideshow').each(function() {
     let $slides = $(this).find('img');
     let slideCount = $slides.length;
     let currentIndex = 0;
-
+    
+    //$($slides[currentIndex]).fadeIn();
+    //$slides[currentIndex].fadeIn(); は不可
     $slides.eq(currentIndex).fadeIn();
     setInterval(showNextSlide, 1000);
 

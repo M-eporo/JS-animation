@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+}
+
+p {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.3rem;
+}
+
+.rollAnime.roll span {
+  transition-property: opacity, transform;
+  transform: rotateY(360deg);
+  transition: all 0.8s cubic-bezier(.77, 0, .175, 1);
+  transition-timing-function: cubic-bezier(.77, 0, .175, 1);
+  display: inline-block;
+}

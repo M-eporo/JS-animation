@@ -1,22 +1,22 @@
-var items = $('.items'), //アイテムのコンテナ
-    item = [], //各アイテムを代入する
-    order = [],  //各アイテムのorderプロパティ
+var items = $('.items'),           //アイテムのコンテナ
+    item = [],                     //各アイテムを代入する
+    order = [],                    //各アイテムのorderプロパティ
     num = items.children().length, //アイテム数
-    index = 0, //配列操作用の変数
-    running = false; //アニメーション重複を防ぐフラグ
+    index = 0,                     //配列操作用の変数
+    running = false;               //アニメーション重複を防ぐフラグ
 
 for(var i = 0; i < num; i++){
   item.push( items.children().eq( i ) );
   order.push( i );
-  item[i].css('order', i　); //各アイテムにORDERプロパティをふる
+  item[i].css('order', i　);                //各アイテムにORDERプロパティをふる
 }
 
 function slider( prev ){
-  running = true;  //アニメーションのフラグON
-  var offset = prev ? 0 : '-200%';  //prevによって、左右の回り方を決める
+  running = true;                                            //アニメーションのフラグON
+  var offset = prev ? 0 : '-200%';                           //prevによって、左右の回り方を決める
   items.animate({left: offset }, 600, 'swing', function(){
-    ordering( prev );  //アニメーション後の並び替えの関数を実行
-    running = false;  //アニメーションフラグ解除
+    ordering( prev );                                         //アニメーション後の並び替えの関数を実行
+    running = false;                                          //アニメーションフラグ解除
   });
 }
 

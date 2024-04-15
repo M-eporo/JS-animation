@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.slider{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+.items{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.item{
+  min-width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.item > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buttons{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button{
+  
+  width: 46px;
+  height: 46px;
+  border: none;
+  outline: none;
+  padding: 0;
+  background: transparent center no-repeat;
+  cursor: pointer;
+  opacity: .4;	
+}
+
+.prev{
+  
+  background-image: url("image/Head_02_DecoLeft16.png");	
+  z-index:10;
+}
+
+.next{
+  
+  background-image: url("image/Head_02_DecoRight16.png");
+  z-index:10;
+}
+
+.button:hover{
+    opacity: .8;
+}
+.dot-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+.dot-btn,
+.dot-btn > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dot-btn > li {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 14px;
+  cursor: pointer;
+}

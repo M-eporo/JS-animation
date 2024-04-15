@@ -74,8 +74,16 @@ if('ontouchstart' in window){
   ul.find("li").on("click", function(){
     if(running) return;
     clearInterval(setSlider);
+    if(
     let count = $(".dot-btn > li").index($(this));
     console.log(count); 
+    let offset = count === 0 ? 0 : -100 * count;
+    items.animate({
+      left: offset
+    },600, "swing", function(){
+      let prev = false;
+      
+    });
   });
 }
 

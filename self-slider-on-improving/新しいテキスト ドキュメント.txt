@@ -1,0 +1,4 @@
+$(this).css("left", (index * 10) - 10 +"%");       
+$childs.eq(0).css("left", 40 + "%");
+  $childs.eq(1).css("left", "-" + 10 + "%");
+  

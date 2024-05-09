@@ -112,27 +112,25 @@ $(window).on("scroll", function(event){
     target = $(`<div class=target id=${i}></div>`).appendTo($("body"));
     target.prop("id", i).css("top", scroll + (height / 2));
     
-    normalScroll(target, i)
+    normalScroll(target.prop("id", i));
     
     vanish(target.prop("id", i));
     remove(target.prop("id", i));
-
-    i += 1;
-    preScroll = scroll;
 
   } else if (preScroll > scroll && (preScroll - scroll) > 50){
 
     target = $(`<div class=target id=${i}></div>`).appendTo($("body"));
     target.prop("id", i).css("top", scroll + (height / 2));
 
-    reverseScroll(target, i);
+    reverseScroll(target.prop("id", i));
 
     vanish(target.prop("id", i));
     remove(target.prop("id", i));
 
   }
-
   
+  i += 1;
+  preScroll = scroll;
   
 });
 
@@ -148,24 +146,24 @@ function remove(elem){
   },2000);
 }
 
-function normalScroll(target, i){
-  //1=else 2=false
+function normalScroll(elem){
+  //1=true 2=false
   if((i % 2)){
     direction = "right";
-    target.prop("id", i).addClass(direction);
+    elem.addClass(direction);
   } else {
     direction = "left";
-    target.prop("id", i).addClass(direction);
+    elem.addClass(direction);
   }
 }
-function reverseScroll(target, i){
-  //1=else 2=false
+function reverseScroll(elem){
+  //1=true 2=false
   if((i % 2)){
     direction = "right";
-    target.prop("id", i).addClass(direction);
+    elem.addClass(direction);
   } else {
     direction = "left";
-    target.prop("id", i).addClass(direction);
+    elem.addClass(direction);
   }
 }
 */

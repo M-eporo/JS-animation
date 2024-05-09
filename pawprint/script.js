@@ -112,7 +112,7 @@ $(window).on("scroll", function(event){
     target = $(`<div class=target id=${i}></div>`).appendTo($("body"));
     target.prop("id", i).css("top", scroll + (height / 2));
     
-    normalScroll(target.prop("id", i));
+    normalScroll(target.prop("id", i), i);
     
     vanish(target.prop("id", i));
     remove(target.prop("id", i));
@@ -122,7 +122,7 @@ $(window).on("scroll", function(event){
     target = $(`<div class=target id=${i}></div>`).appendTo($("body"));
     target.prop("id", i).css("top", scroll + (height / 2));
 
-    reverseScroll(target.prop("id", i));
+    reverseScroll(target.prop("id", i), i);
 
     vanish(target.prop("id", i));
     remove(target.prop("id", i));
@@ -146,7 +146,7 @@ function remove(elem){
   },2000);
 }
 
-function normalScroll(elem){
+function normalScroll(elem, i){
   //1=true 2=false
   if((i % 2)){
     direction = "right";
@@ -156,7 +156,7 @@ function normalScroll(elem){
     elem.addClass(direction);
   }
 }
-function reverseScroll(elem){
+function reverseScroll(elem, i){
   //1=true 2=false
   if((i % 2)){
     direction = "right";

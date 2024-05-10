@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes infinity-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.scroll-infinity-container {
+  display: flex;
+  overflow: hidden;
+}
+.scroll-infinity-list {
+  display: flex;
+  list-style: none;
+  padding: 0
+}
+.scroll-infinity-list-left {
+  animation: infinity-scroll-left 10s infinite linear 0.5s both;
+}
+.scroll-infinity-item {
+  width: calc(100vw / 6);
+}
+.scroll-infinity-item > img {
+  width: 100%;
+}
+.scroll-infinity-wrap:hover .scroll-infinity-list-left{
+  animation-play-state: paused;
+}
+@keyframes infinity-scroll-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.scroll-infinity-list-right{
+  animation :infinity-scroll-right 10s infinite linear 0.5s both;
+}

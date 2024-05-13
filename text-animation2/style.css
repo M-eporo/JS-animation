@@ -3,13 +3,11 @@
 body {
   margin: 0;
 }
-
 p {
   text-align: center;
   margin: 20px 0;
   font-size: 1.3rem;
 }
-
 .rollAnime.roll span {
   transition-property: opacity, transform;
   transform: rotateY(360deg);

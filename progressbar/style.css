@@ -1,190 +1,75 @@
 @charset "UTF-8";
-
-
 .red {
-	color: red;
+  color: red;
 }
 *, *::before, *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 main {
-	width: 90%;
-	margin: 0 auto;
-	padding: 50px 30px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 30px;
 }
-
 section {
-	margin: 80px 0;
+  margin: 80px 0;
 }
-
 h1 {
-	text-align: center;
+  text-align: center;
 }
-
 .wrapper {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
 }
-
 .box {
-	width: 200px;
-	height: 150px;
-	border-radius: 15px;
-	text-align: center;
-	background-color: lightblue;
+  width: 200px;
+  height: 150px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: lightblue;
 }
-
 .box > span {
-	display: block;
-	line-height: 150px;
-	color: #fff;
-	letter-spacing: 2px;
+  display: block;
+  line-height: 150px;
+  color: #fff;
+  letter-spacing: 2px;
 }
-
-.fadeIn {
-	animation-name: fadeInAnime;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	opacity: 0;
-}
-@keyframes fadeInAnime {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-.fadeLeft {
-	animation-name: fadeInLeft;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	opacity: 0;
-}
-@keyframes fadeInLeft {
-	from {
-		opacity: 0;
-		transform: translateX(-50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-.fadeRight {
-	animation-name: fadeInRight;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	opacicty: 0;
-}
-@keyframes fadeInRight {
-	from {
-		opacity: 0;
-		transform: translateX(50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-.fadeDown {
-	animation-name: fadeInDown;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	opacity: 0;
-}
-@keyframes fadeInDown {
-	from {
-		opacity: 0;
-		transform: translateY(50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.fadeUp {
-	animation-name: fadeInUp;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-	opacity: 0;
-}
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(-50px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
 ul {
-	width: 500px;
-	height: 200px;
-	overflow: auto;
-	list-style-type: none;
-	padding: 0 15px 0;
-	border: 1px solid #777;
-	border-radius: 10px;
+  width: 500px;
+  height: 200px;
+  overflow: auto;
+  list-style-type: none;
+  padding: 0 15px 0;
+  border: 1px solid #777;
+  border-radius: 10px;
 }
-
 .sticky {
-	position: sticky;
-	top: 0px;
-	margin-top: 0;
-	border-bottom: 1px solid #999;
-	background-color: #fff;
-	line-height: 100px;
+  position: sticky;
+  top: 0px;
+  margin-top: 0;
+  border-bottom: 1px solid #999;
+  background-color: #fff;
+line-height: 100px;
 }
-
 li {
-	padding-left: 10px;
-	font-size: 16px;
-	line-height: 50px;
-	border-bottom: 1px solid #777;
+  padding-left: 10px;
+  font-size: 16px;
+  line-height: 50px;
+border-bottom: 1px solid #777;
 }
-
-.fadeIn {
-	animation-name: fadeInAnime;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
-	opaity: 0;
-}
-
-@keyframes fadeInAnime {
-	from {
-		opacity: 0;
-		
-	}
-	to {
-		opacity: 1;
-		
-	}
-}
-
 #splash {
-	position: fixed;
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	background-color: #fff;
-	text-align: center;
-	colof: #fff;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  text-align: center;
+  colof: #fff;
 }
-

@@ -1,62 +1,50 @@
 @charset "UTF-8";
 
 *, *::before, *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 main {
-	width: 90%;
-	margin: 0 auto;
-	padding: 50px 30px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 30px;
 }
-
 section {
-	margin: 80px 0;
+  margin: 80px 0;
 }
-
 h1 {
-	text-align: center;
+  text-align: center;
 }
-
 .randomWrapper {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-evenly;
-	margin-top: 900px;
-	margin-bottom: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  margin-top: 900px;
+  margin-bottom: 1000px;
 }
-
 .box {
-	width: 200px;
-	height: 150px;
-	border-radius: 15px;
-	text-align: center;
-	background-color: lightblue;
-	opacity: 0;
+  width: 200px;
+  height: 150px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: lightblue;
+  opacity: 0;
 }
-
 .fadeIn {
-	animation-name: fadeInAnime;
-	animation-duration: 2s;
-	animation-fill-mode: forwards;
-	opacity: 0;
+  animation-name: fadeInAnime;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 @keyframes fadeInAnime {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-
-
-
-

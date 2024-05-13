@@ -1,107 +1,88 @@
 @charset "UTF-8";
 
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 h1 {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 .w-container {
-	width: min(92%, 1166px);
-	margin: 0 auto;
+  width: min(92%, 1166px);
+  margin: 0 auto;
 }
-
 .header {
-	height: 112px;
-	background-color: #e0e0e0;
+  height: 112px;
+  background-color: #e0e0e0;
 }
-
 .flex-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
-
 .btn {
-	position: relative;
-	width: 32px;
-	height: 32px;
-	border-radius: 3px;
-	cursor: pointer;
-	z-index: 140;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 140;
 }	
-
 .btn-area {
-	width: 100%;
-	height: 100%;
-	z-index: 140;
-	transition: all 0.6s;
+  width: 100%;
+  height: 100%;
+  z-index: 140;
+  transition: all 0.6s;
 }
-
 .btn-area.open {
-	transform: rotate(360deg);
-	
+  transform: rotate(360deg);	
 }
-
 .btn  span {
-	position: absolute;
-	left: 0;
-	right: 0;
-	display: block;
-	height: 3px;
-	border-radius: 3px;
-	background-color: #777;
-	transition: all 0.6s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #777;
+transition: all 0.6s;
 }
-
 .btn  span:nth-of-type(1) {
-	top: 4px;
+  top: 4px;
 }
-
 .btn  span:nth-of-type(2) {
-	top: 15px;
+  top: 15px;
 }
-
 .btn  span:nth-of-type(3) {
-	top: 26px;
+  top: 26px;
 }
-
 .btn.open  span {
-	background-color: #fff;
-	z-index: 130;
+  background-color: #fff;
+  z-index: 130;
 }
-
 .btn.open  span:nth-of-type(1){
-	top: 14px;
-	transform-origin: center;
-	transform: rotate(45deg);
-	
+  top: 14px;
+  transform-origin: center;
+  transform: rotate(45deg);	
 }
-
 .btn.open  span:nth-of-type(2){
-	opacity: 0;
+  opacity: 0;
 }
-
 .btn.open  span:nth-of-type(3){
-	top: 14px;
-	transform-origin: center;
-	transform: rotate(-45deg);
-	
+  top: 14px;
+  transform-origin: center;
+  transform: rotate(-45deg);	
 }
-
 .mask {
-	position: fixed;
-	inset: 0;
-	display: none;
-	background-color: rgba(0,0,0,0.7);
-	transition: all 0.6s;
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: rgba(0,0,0,0.7);
+  transition: all 0.6s;
 }
 .mask.open {
-	display: revert;
+  display: revert;
 }

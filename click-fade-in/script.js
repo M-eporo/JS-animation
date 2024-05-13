@@ -1,10 +1,6 @@
 const target = document.querySelectorAll(".box");
-console.log(target);
-
 target.forEach((element, index, arry) => {
-
 	element.addEventListener("click", function(e){
-
 		switch(element.dataset.event){
 		case "Left":
 			element.classList.add("fadeLeft");
@@ -21,6 +17,5 @@ target.forEach((element, index, arry) => {
 		default:
 			element.classList.add("fadeIn");
 		}
-		
 	});
 });

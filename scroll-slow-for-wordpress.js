@@ -1,5 +1,5 @@
 $(function(){
-  $("a[href*='http://sakura-sushi.local/#']").on("click", function() {
+  $("a[href*='http://domain.local/#']").on("click", function() {
     const href = $(this).attr("href");
     let num = href.indexOf("#");
     let str = href.slice(num);

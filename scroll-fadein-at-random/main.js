@@ -28,3 +28,5 @@ let animeFlag = true;
 $(window).on("scroll", function() {
   scrollAnimation();
 });
+
+$(window).trigger("scroll");

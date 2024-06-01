@@ -19,3 +19,4 @@ $(window).on("scroll", function() {
     $(".top-btn").fadeOut();
   }
 });
+$(window).trigger("scroll");

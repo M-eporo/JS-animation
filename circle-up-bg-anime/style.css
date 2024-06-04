@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+/*
+main {
+  width: 1000px;	
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+*/
+.mv {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to left bottom, #111111, #404040, #747474, #adadad, #eaeaea);
+  overflow: hidden; 
+}
+.circle {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  border-radius: 50%;
+  background-color: #fff;
+}

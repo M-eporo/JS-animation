@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  width: 1000px;	
+  margin: 0 auto;
+  background-color: #fafafa;
+  overflow: hidden;
+}               
+.mv {
+  width: 100%;
+  height: 600px;
+  background-size: 5% 100%;
+  background-image: linear-gradient(90deg,#000, #000 50% ,#fff 50%, #fff 100%);
+  background-repeat: repeat;
+  
+}

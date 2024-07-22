@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.path_wrapper {
+  width: 120px;
+  background-color: rgba(241,204,247,0.4);
+}
+#spade{
+  fill: transparent;
+  stroke: mediumpurple;
+  stroke-width: 3;
+  transition: all 1s;
+}
+.path_wrapper:hover #spade {
+  stroke-dashoffset: 0 !important;
+  
+}
+@keyframes svg-anime {
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+#target-text {
+  animation: svg-anime 15s linear infinite;
+}

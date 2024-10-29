@@ -7,7 +7,7 @@ class CreateAnimation{
   index = 0;
   requestId = [];
   cbSingle = () => {
-    animes[index].play();
+    this.animes[0].play();
   };
 　cbMulti = () => {
     for(const anime of this.animes){

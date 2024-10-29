@@ -14,10 +14,11 @@ class CreateAnimation{
       anime.play();
     }
   }; 
+
   constructor(obj){
-    while(this.index < obj.targets.length){
-      this.animes.push(obj.targets[this.index].animate(obj.keyframes, obj.options));
-      this.animes[this.index].cancel();
+    for(let i = 0; i < obj.targets.length; i++){
+      this.animes.push(obj.targets[i].animate(obj.keyframes, obj.options));
+      this.animes[i].cancel();
       this.index++;
     }
   }
@@ -26,8 +27,8 @@ class CreateAnimation{
     if(this.index === 1){
       this.requestId.push(window.requestAnimationFrame(this.cbSingle));
     }else{
-      for(let i = 1; i <= this.index; i++){
-        this.requestId.push(window.requestAnimationFrame(this.cbMulti))
+      for(let i = 0; i < this.index; i++){
+        this.requestId.push(window.requestAnimationFrame(this.cbMulti));
       }
     }
   }

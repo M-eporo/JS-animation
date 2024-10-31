@@ -1,18 +1,17 @@
-//複数の要素に対応させる
+//updateメソッド作成
+//Error処理
 
 const target = Array.from(document.querySelectorAll("#js-color"));
 
 class CreateAnimation{
   animes = [];
   index = 0;
-  requestId = [];
+  requestIds = [];
   cbSingle = () => {
     this.animes[0].play();
   };
-　cbMulti = () => {
-    for(const anime of this.animes){
-      anime.play();
-    }
+　cbMulti = (anime) => {
+    anime.play();
   }; 
 
   constructor(obj){
@@ -20,27 +19,37 @@ class CreateAnimation{
       this.animes.push(obj.targets[i].animate(obj.keyframes, obj.options));
       this.animes[i].cancel();
       this.index++;
+      this.animes[i].requestIds = this.index;
     }
   }
   
   start(){
     if(this.index === 1){
-      this.requestId.push(window.requestAnimationFrame(this.cbSingle));
+      this.requestIds.push(window.requestAnimationFrame(this.cbSingle));
     }else{
       for(let i = 0; i < this.index; i++){
-        this.requestId.push(window.requestAnimationFrame(this.cbMulti));
+        this.requestIds.push(window.requestAnimationFrame(() => this.cbMulti(this.animes[i])));
       }
     }
-  }
-  
-  update(){
-    
+    return {
+      animes: this.animes,
+      requestIds: this.requestIds,
+    };
   }
 
-  stop(){
-    
+  stop(animes){
+    for(const anime of animes ){
+      window.cancelAnimationFrame(anime.requestIds);
+    }
+  }
+
+  stopPartly(...ids){
+    ids.forEach((id,index) => {
+      window.cancelAnimationFrame(id);
+    });
   }
 }
+
 const i = new CreateAnimation({
   targets: target,
   keyframes: [
@@ -53,4 +62,12 @@ const i = new CreateAnimation({
     iterations: Infinity
   },
 });
-i.start();
+
+const {animes, requestIds} = i.start();
+//playState = idle になる
+//window.cancelAnimationFrame(requestIds);
+console.log(animes)
+console.log(requestIds);
+//i.stop(animes);
+
+//i.stopPartly(3);

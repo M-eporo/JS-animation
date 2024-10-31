@@ -5,46 +5,63 @@ const target = Array.from(document.querySelectorAll("#js-color"));
 
 class CreateAnimation{
   animes = [];
-  index = 0;
-  requestIds = [];
-  cbSingle = () => {
+  //index = 0;
+  reqIds = [];
+  /*cbSingle = () => {
     this.animes[0].play();
-  };
-　cbMulti = (anime) => {
+  };*/
+　cb = (anime) => {
     anime.play();
   }; 
 
   constructor(obj){
-    for(let i = 0; i < obj.targets.length; i++){
+    if(!obj.targets || obj.targets.length === 0){
+      throw new Error("No targets provided for animation");
+    }
+    obj.targets.forEach(target, index) => {
+      const anime = target.animate(obj.keyframes, obj.options);
+      anime.cancel();
+      anime.reqId = ++index;
+      this.animes.push(anime);
+    });
+    /*for(let i = 0; i < obj.targets.length; i++){
       this.animes.push(obj.targets[i].animate(obj.keyframes, obj.options));
       this.animes[i].cancel();
       this.index++;
       this.animes[i].requestIds = this.index;
-    }
+    }*/
   }
   
   start(){
+    this.animes.forEach((anime, index) => {
+      this.reqIds.push(window.requestAnimationFrame(() => this.cb(anime)));
+    });
+    /*
     if(this.index === 1){
-      this.requestIds.push(window.requestAnimationFrame(this.cbSingle));
+      this.reqIds.push(window.requestAnimationFrame(this.cbSingle));
     }else{
       for(let i = 0; i < this.index; i++){
-        this.requestIds.push(window.requestAnimationFrame(() => this.cbMulti(this.animes[i])));
+        this.reqIds.push(window.requestAnimationFrame(() => this.cbMulti(this.animes[i])));
       }
-    }
+    }*/
     return {
       animes: this.animes,
-      requestIds: this.requestIds,
+      reqIds: this.reqIds,
     };
   }
 
-  stop(animes){
+  stop(){
+    this.reqIds.forEach(id => {
+      window.cancelAnimationFrame(id));
+    });
+    /*
     for(const anime of animes ){
       window.cancelAnimationFrame(anime.requestIds);
-    }
+    }*/
   }
 
   stopPartly(...ids){
-    ids.forEach((id,index) => {
+    ids.forEach(id => {
       window.cancelAnimationFrame(id);
     });
   }
@@ -68,6 +85,6 @@ const {animes, requestIds} = i.start();
 //window.cancelAnimationFrame(requestIds);
 console.log(animes)
 console.log(requestIds);
-//i.stop(animes);
+//i.stop();
 
 //i.stopPartly(3);

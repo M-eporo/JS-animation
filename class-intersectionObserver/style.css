@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.js-observer {
+  width: 300px;
+  height: 1000px;
+  margin: 1000px auto 0;
+  background-color: lightgray;
+}

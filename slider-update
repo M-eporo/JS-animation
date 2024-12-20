@@ -1,5 +1,5 @@
 const slider = document.querySelector(".slider");
-
+let currentSlider = document.querySelector(".slider");
 const leftBtn = document.querySelector(".left");
 const rightBtn = document.querySelector(".right");
 const length = slider.children.length;
@@ -12,17 +12,15 @@ for(let i = 0; i < length; i++){
  btnContainer.append(optBtn);
 }
 const btns = btnContainer.querySelectorAll("button");
-
-
 let anime;
 
 const sliderFn = () => {
-  anime?.cancel();
+ anime?.cancel();
  anime = slider.animate([
   {transform: "translateX(0)"},
   {transform: "translateX(-100%)"},
  ],{
-  duration: 600,
+  duration: 1000,
   fill: "forwards"
  });
  slider.append(slider.children[0]);
@@ -38,7 +36,7 @@ leftBtn.addEventListener("click", () => {
   {transform: "translateX(-200%)"},
   {transform: "translateX(-100%)"}
  ],{
-  duration: 600,
+  duration: 1000,
   fill: "forwards"
  });
  slider.prepend(slider.children[length - 1]);
@@ -52,48 +50,40 @@ rightBtn.addEventListener("click", () => {
   {transform: "translateX(0%)"},
   {transform: "translateX(-100%)"}
  ],{
-  duration: 600,
+  duration: 1000,
   fill: "forwards"
  });
  slider.append(slider.children[0]);
  id = setInterval(sliderFn, 2000);
 });
 
- const jump = (num, children) => {
-  anime = slider.animate([
-   { transform: "translateX(" + num + "%)" },
-  ],{
-   duration: 600,
-   fill: "forwards"
-  });
-  
-  
- };
+const jump = (start, end) => {
+ anime = slider.animate([
+  { transform: "translateX(" + start + ")" },
+  { transform: "translateX(" + end + ")" },
+ ],{
+  duration: 1000,
+  fill: "forwards"
+ });
+};
 
 btns.forEach((btn, ref) => {
  btn.addEventListener("click", (e) => {
-
- anime?.cancel();
- clearInterval(id);
-
- const targetIndex = e.currentTarget.dataset.ref;
-
- let children = Array.from(slider.children);
-
- const targetElement = children.find((elem) => elem.dataset.ref === targetIndex);
- console.log(targetElement.textContent);
-  console.log(children.indexOf(targetElement));
+  anime?.cancel();
+  clearInterval(id);
+  const targetIndex = e.currentTarget.dataset.ref;
+  currentSlider = document.querySelector(".slider");
+  let children = Array.from(currentSlider.children);
+  const targetElement = children.find((elem) => elem.dataset.ref === targetIndex);
   const position = children.indexOf(targetElement);
-  
   if(position === 0) {
-   jump(0);
-   slider.prepend(slider.lastElementChild);
-  id = setInterval(sliderFn, 2000);
+   jump(-100+ "%",0 + "%");
+   id = setInterval(sliderFn, 2000);
   }else if( position > 1){
-   const difference = (position) * -100;
-   jump(difference);
+   const difference = (position + 1) * -100;
+   jump(0, difference);
    for(let i = 1; i < position; i++){
-     slider.append(slider.children[0]);
+    slider.append(slider.children[0]);
    }
    id = setInterval(sliderFn, 2000);
   } else {

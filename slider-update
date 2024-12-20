@@ -1,0 +1,103 @@
+const slider = document.querySelector(".slider");
+
+const leftBtn = document.querySelector(".left");
+const rightBtn = document.querySelector(".right");
+const length = slider.children.length;
+const btnContainer = document.querySelector(".optBtnContainer");
+
+for(let i = 0; i < length; i++){
+ const optBtn = document.createElement("button");
+ optBtn.textContent = "O";
+ optBtn.dataset.ref = i;
+ btnContainer.append(optBtn);
+}
+const btns = btnContainer.querySelectorAll("button");
+
+
+let anime;
+
+const sliderFn = () => {
+  anime?.cancel();
+ anime = slider.animate([
+  {transform: "translateX(0)"},
+  {transform: "translateX(-100%)"},
+ ],{
+  duration: 600,
+  fill: "forwards"
+ });
+ slider.append(slider.children[0]);
+ //これだけで順転できる。
+ //slider.append(slider.children[0]);
+};
+let id = setInterval(sliderFn, 2000);
+
+leftBtn.addEventListener("click", () => {
+ anime?.cancel();
+ clearInterval(id);
+ anime = slider.animate([
+  {transform: "translateX(-200%)"},
+  {transform: "translateX(-100%)"}
+ ],{
+  duration: 600,
+  fill: "forwards"
+ });
+ slider.prepend(slider.children[length - 1]);
+ id = setInterval(sliderFn, 2000);
+});
+
+rightBtn.addEventListener("click", () => {
+ anime?.cancel();
+ clearInterval(id);
+ anime = slider.animate([
+  {transform: "translateX(0%)"},
+  {transform: "translateX(-100%)"}
+ ],{
+  duration: 600,
+  fill: "forwards"
+ });
+ slider.append(slider.children[0]);
+ id = setInterval(sliderFn, 2000);
+});
+
+ const jump = (num, children) => {
+  anime = slider.animate([
+   { transform: "translateX(" + num + "%)" },
+  ],{
+   duration: 600,
+   fill: "forwards"
+  });
+  
+  
+ };
+
+btns.forEach((btn, ref) => {
+ btn.addEventListener("click", (e) => {
+
+ anime?.cancel();
+ clearInterval(id);
+
+ const targetIndex = e.currentTarget.dataset.ref;
+
+ let children = Array.from(slider.children);
+
+ const targetElement = children.find((elem) => elem.dataset.ref === targetIndex);
+ console.log(targetElement.textContent);
+  console.log(children.indexOf(targetElement));
+  const position = children.indexOf(targetElement);
+  
+  if(position === 0) {
+   jump(0);
+   slider.prepend(slider.lastElementChild);
+  id = setInterval(sliderFn, 2000);
+  }else if( position > 1){
+   const difference = (position) * -100;
+   jump(difference);
+   for(let i = 1; i < position; i++){
+     slider.append(slider.children[0]);
+   }
+   id = setInterval(sliderFn, 2000);
+  } else {
+   id = setInterval(sliderFn, 2000);
+  }
+ });
+});

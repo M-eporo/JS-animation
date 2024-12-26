@@ -8,6 +8,42 @@ link.forEach((item, index) => {
     //target.scrollIntoView({behavior: "smooth", block: "start"});
   });
 });
+/*
+layerY
+layerX
+**マウスイベント
+**マウスの位置
+clientY
+clientX
 
+**パディングを含む要素の内側の寸法@px
+clientHeight
+clientWidth
 
+**パディングトップから、ボーダートップ
+**ボーダーの幅
+clientTop
+clientLeft
 
+**マウスイベント
+offsetY
+offsetX
+offsetHeight
+offsetWidth
+
+**
+offsetTop
+offsetLeft
+pageY
+pageX
+pageYOffset
+pageXOffset
+screenY
+screenX
+scrollY
+scrollX
+scrollTop
+scrollLeft
+scrollWidth
+scrollHeight
+*/

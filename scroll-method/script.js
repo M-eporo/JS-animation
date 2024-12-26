@@ -42,15 +42,15 @@ event.clientX
 **要素の高さ（ピクセル単位）を表す
 内容を含む高さ（paddingを含むが、borderとmarginは含まない）
 要素のスクロール可能な部分ではなく、表示されている部分の高さを取得
-clientHeight
-clientWidth
+element.clientHeight
+element.clientWidth
 
 **パディングトップから、ボーダートップ
 **ボーダーの幅
 **要素のコンテンツ領域の上端から要素全体の上端までの距離（ピクセル単位）を取得するプロパティ
 要素上端の「ボーダーの幅」を指し、paddingやmarginは含まない
-clientTop
-clientLeft
+element.clientTop
+element.clientLeft
 
 **ポインターイベント
 **イベント発生時の要素の左上を基準に、Y軸方向のオフセット位置（ピクセル）を取得する

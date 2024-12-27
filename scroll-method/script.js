@@ -68,6 +68,7 @@ element.scrollLeft
 値: 要素の内容全体の幅
 スクロールバーが表示されているかに関係なくコンテンツ全体の幅を返す
 表示されていない部分も含めた幅が取得可能
+スクロールバーを含む
 基準: コンテンツ全体の幅（padding を含むが、border は含まない）
 element.scrollWidth
 element.scrollHeight

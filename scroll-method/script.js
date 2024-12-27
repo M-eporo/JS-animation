@@ -81,6 +81,10 @@ element.scrollHeight
 element.offsetTop
 element.offsetLeft
 
+**
+positionの値が、relative,absolute,fixedのいずれかが設定された間近の位置指定要素
+element.offsetParent
+
 **ポインターイベント
 **イベント発生時の要素の左上を基準に、Y軸方向のオフセット位置（ピクセル）を取得する
 event.offsetY

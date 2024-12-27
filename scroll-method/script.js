@@ -35,6 +35,7 @@ window.scrollX
 **要素の高さ（ピクセル単位）を表す
 内容を含む高さ（paddingを含むが、borderとmarginは含まない）
 要素のスクロール可能な部分ではなく、表示されている部分の高さを取得
+スクロールバーは含まない
 element.clientHeight
 element.clientWidth
 

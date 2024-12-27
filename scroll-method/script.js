@@ -62,6 +62,7 @@ element.clientLeft
 スクロール位置を取得する場合は scrollTop を読み取る
 スクロール位置を指定する場合は scrollTop に値を代入
 基準: 要素のスクロールコンテンツの上端。
+要素の一番上から、現在ブラウザに表示されている要素の一番上までのスクロール量
 element.scrollTop
 element.scrollLeft
 

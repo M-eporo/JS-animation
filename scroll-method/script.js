@@ -76,6 +76,8 @@ element.scrollHeight
 基準: 最も近いオフセット親要素（position が relative, absolute, fixed のいずれかに設定された親要素）
 値: 整数値（ピクセル単位）
 用途: 要素の位置を計算したり、動的にスタイルを調整する際に使用する
+取得した要素の外側（マージンまで含む）から
+最も近い位置指定祖先要素である offsetParent のパディング上辺までの距離
 element.offsetTop
 element.offsetLeft
 

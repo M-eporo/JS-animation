@@ -12,6 +12,7 @@ link.forEach((item, index) => {
 
 **要素の位置とサイズに関する情報を取得するためのメソッド
 要素のビューポート（画面）内での位置と寸法を表すオブジェクトを返す
+height or width + padding + border
 element.getBoundingClientRect
 戻り値
     x	要素の左端がビューポートの左端からどれだけ離れているか（同じ値: left）

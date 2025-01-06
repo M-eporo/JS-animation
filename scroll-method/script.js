@@ -112,6 +112,12 @@ event.pageX
 event.screenY
 event.screenX
 
+**wheel event
+スクロール量
+deltaY
+deltaX
+deltaZ
+
 **イベントが発生した要素の最初のレイヤーを基準とした Y 座標を取得するプロパティ
 基準: レイヤーの左上（通常は、最初のイベントターゲット要素の左上）
 値: 数値（ピクセル単位）

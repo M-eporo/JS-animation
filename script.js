@@ -1,48 +1,49 @@
-type Props = {
-  handleChangeView: (view: string) => void;
-};
+const AlertDialog = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+ 
+  const handleDelete = async ( ) => {
+   try {
+     await auth.currentUser?.delete();
+   } catch(err) {
+     if(err.code){
 
+     }
+   }
+  };
+  const deleteUserData = async () => {
+    try {
+      await delete(doc(db, "user", auth.currentUser.uid);
+    } catch(err) {
 
-
-const MenuDrawer = ({handleChangeView}: Props) => {
-  const [show, setShow] = useState(false);
-  const toggleDraw = () => setShow(!show);
-  const user = useAppSelector((state) => state.user.user);
-  const emailUser = useAppSelector((state) => state.emailUser.emailUser);
-  const menu = drawerMenu(handleChangeView)
+    }
+  };
   
+  const user = useAppSelector((state) => state.user.user);
   return (
-    <div className={styles.container}>
-      <Button onClick={toggleDraw}><SettingsOutlinedIcon /></Button>
-      <Drawer anchor="left" open={show} onClose={toggleDraw}>
-        <Box sx={{ height: "100vh" }} >
-          <List>
-            <div className={styles.logoContainer}>
-            {emailUser
-              ? 
-              <UserIcon userName={emailUser.displayName} />
-              :
-              <img src={user?.photo} alt="ユーザーアイコン" />
-            }
-            </div>
-            <Divider />
-            {menu.map((obj) => {
-              const Icon = obj.icon;
-              return (
-                <ListItem key={obj.title}>
-                  <ListItemButton onClick={obj.onClick}>
-                    <ListItemIcon><Icon /></ListItemIcon>
-                    <ListItemText primary={obj.title}/>
-                    {obj.title === "ユーザー情報" && <UserInfoModal />}
-                  </ListItemButton>
-                </ListItem>
-              );
-            })}
-          </List>
-        </Box>
-      </Drawer>
-    </div>
+      <IconButton onClick={handleOpen}><Icon/></IconButton>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        arial-descsribedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {アカウント登録削除}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {アカウントを削除するとスケジュールは全て削除されます。よろしいですか？。}
+          </DialogContentText>
+        </DialogContent>
+          
+        <DialogActions>
+          <Button onClick={handleClose} autoFocus>キャンセル</Button>
+          <Button onClick={}>削除</Button>
+        </DialogActions>
+      </Dialog>
   );
 };
+export default AlertDialog;	
 
-export default MenuDrawer;

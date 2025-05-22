@@ -46,4 +46,27 @@ const AlertDialog = () => {
   );
 };
 export default AlertDialog;	
+const str = document.querySelector(".text").innerText;
+const strArray = [...str];
 
+const paragraph = document.querySelector(".text");
+paragraph.innerText = "";
+
+strArray.forEach((char) => {
+  const newSpan = document.createElement("span");
+  newSpan.innerText = char;
+  paragraph.append(newSpan);
+});
+const spans = [...paragraph.querySelectorAll("span")];
+
+console.log(spans)
+  spans.forEach((span) => {
+    span.animate(
+      [
+        { opacity: 0 }, { opacity: 1 },
+      ], {
+        duration: 1,
+        
+      }
+    );
+  });

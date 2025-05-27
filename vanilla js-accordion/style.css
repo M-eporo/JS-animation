@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.item {
+  margin-bottom: 2em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.heading {
+  margin: 0;
+  padding: 1em 0;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+}
+.drawer {
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  margin: 0;
+  padding: 0 0;
+  transition: all 0.5s ease;
+}
+.drawer.open {
+  max-height: revert;
+  visibility: visible;
+  padding: 1em 0;
+}
